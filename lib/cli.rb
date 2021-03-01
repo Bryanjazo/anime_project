@@ -9,7 +9,7 @@ class CLI
   end
 
   def greeting
-    puts "Greeting's fellow weeb, lets get started on finding the best anime for you!".colorize(:cyan)
+    puts "Greeting's fellow weeb, let's get started on finding the best anime for you!".colorize(:cyan)
     sleep(1)
     puts "Let's start with your favorite genre, please type in your favorite genre from the following categories below!".colorize(:cyan)
     sleep(1)
@@ -29,7 +29,7 @@ class CLI
                     end
                 synopsis
       else
-        puts "Thats not what I was asking SIR".colorize(:cyan)
+        puts "Sorry, Thats not a genre from the genres provided wan't to try again?".colorize(:cyan)
         menu
     end
 end
@@ -41,6 +41,7 @@ end
 def synopsis
   puts "Which anime would you like to choose for more information? pick it by the number!".colorize(:cyan)
     input = gets.chomp
+    if input == 1..20
     anime = Anime.find_anime_obj(@titles[input.to_i - 1])
     puts anime.synopsis
     puts "Would you like to choose a different genre? yes/no".colorize(:cyan)
@@ -48,13 +49,16 @@ def synopsis
     if input == "yes"
         menu
       elsif input == "no"
-        puts "FINE have a life then :/".colorize(:cyan)
+        puts "I mean... if you dont want to watch anime you Should have just said so..".colorize(:cyan)
         exit
       else
-        puts "uhhh you okay? let me take you back so you can decide again or type exit/no to leave menu.".colorize(:cyan)
+        puts "uhhh you goodjf? let me take you back so you can decide again or type exit/no to leave menu.".colorize(:cyan)
         menu
       end
-
+  else
+    puts "Yeahhhhh, I think you need to pick again".colorize(:cyan)
+    menu
+  end
 end
 
   def flag
