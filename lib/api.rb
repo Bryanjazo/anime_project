@@ -36,12 +36,15 @@ class API
       anime_hash = Net::HTTP.get_response(uri)
       anime_array = JSON.parse(anime_hash.body)
     end
-    create_object(anime_array["anime"])
-    # binding.pry
+    anime_array["anime"].each do |hash|
+      create_object(hash)
+    end
+     #create_object(anime_array["anime"])
   end
 
-  def create_object(anime_array)
-    anime_array.each { |anime_hash| Anime.new(anime_hash) }
-    # binding.pry
+  def create_object(hash)
+    # anime_array.each { |anime_hash| Anime.new(anime_hash) }
+    # # binding.pry
+    Anime.new(hash)
   end
 end

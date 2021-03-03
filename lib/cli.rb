@@ -18,6 +18,7 @@ class CLI
     def menu
       puts "Action, Cars, Adventure, Comedy, Dementia, Demons".colorize(:cyan)
       input = gets.strip.downcase.chomp
+      Anime.all.clear
       if input == "action" || input == "cars" || input == "adventure" || input == "comedy" || input == 'dementia' || input == 'demons'
                  API.new.get_genre(input)
                  @titles = Anime.all.map { |obj| obj.title}
@@ -37,9 +38,11 @@ end
 def synopsis
   puts "Which anime would you like to choose for more information? pick it by the number!".colorize(:cyan)
     input = gets.chomp
-    if (1...20).include?(input.to_i)
-    anime = Anime.find_anime_obj(@titles[input.to_i - 1])
-    puts anime.synopsis
+     if input.to_i >= 1 && input.to_i <= 20
+    anime = Anime.all[input.to_i - 1].synopsis
+  #  binding.pry
+    #binding.pry
+    puts anime
     puts "Would you like to choose a different genre? yes/no".colorize(:cyan)
     input = gets.chomp
     if input == "yes"

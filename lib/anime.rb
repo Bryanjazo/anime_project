@@ -1,12 +1,20 @@
 class Anime
 
+  attr_accessor :title, :synopsis
+
   @@all = []
 
-  def initialize(anime_array)
-    anime_array.each do |key, value|
-     self.class.attr_accessor(key)
-     send("#{key}=", value)
-   end
+  def initialize(hash)
+    @title = hash["title"]
+    @synopsis = hash["synopsis"]
+
+    #binding.pry
+  # anime_array.each do |key|
+    #   @title
+   #  anime_array.each do |key, value|
+   #   self.class.attr_accessor(key)
+   #   send("#{key}=", value)
+   # end
      @@all << self
    end
 
@@ -17,7 +25,7 @@ class Anime
 
   def self.all
    @@all
-   # binding.pry
+   #binding.pry
   end
 
 end
