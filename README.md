@@ -1,28 +1,16 @@
-# Anime
+# Anime Project
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/anime`. To experiment with that code, run `bin/console` for an interactive prompt.
+In this project you will find the jikson API used..
 
-TODO: Delete this and the text above, and describe your gem
 
-## Installation
+## What it does.
 
-Add this line to your application's Gemfile:
+The way it was designed to be used is to process that API for the user’s favorite genre, once the program is running the user will be prompted to input their favorite genre from the following options. Action, cars, comedy, dementia, and demons. As soon as the user inputs their favorite genre a list of the top 20 trending animes will be output in the terminal. Error handling is managed here as well if a user by mistake types in an invalid input it will automatically redirect them to the menu option where it will re-ask the user to input their answer until the correct one has been choosing. After the titles are shown, it will then ask for the user to choose from the following titles allowing the individual to have a pick on what anime they would like more information on. Once the user picks, A synopsis page will pop up allowing the user to have a more detailed understanding of what that specific anime is about. Finally, if the user wants a different genre the program will ask if they would like to choose a different genre or title and if not it will give them an option to exit.
 
-```ruby
-gem 'anime'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install anime
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ gem install anime
 
 ## Development
 
